@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_app/pages/home_page.dart';
 import 'package:mobile_app/pages/login_page.dart';
 import 'package:mobile_app/utilis/routes.dart';
@@ -17,8 +18,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       theme: MyTheme.lightTheme(context),
-      darkTheme:MyTheme.darkTheme(context),
-      initialRoute: "MyRoutes.homeRote",
+      darkTheme: MyTheme.darkTheme(context),
+      initialRoute: MyRoutes.homeRote,
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.homeRote: (context) => HomePage(),
