@@ -10,17 +10,17 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String name = "";
-  bool changeButon = false;
+  bool changeButton = false;
   final _formKey = GlobalKey<FormState>();
   moveToHome(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
       setState(() {
-        changeButon = true;
+        changeButton = true;
       });
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(const Duration(seconds: 1));
       await Navigator.pushNamed(context, MyRoutes.homeRote);
       setState(() {
-        changeButon = false;
+        changeButton = false;
       });
     }
   }
@@ -38,24 +38,24 @@ class _LoginPageState extends State<LoginPage> {
                   "assets/images/login_images.png",
                   fit: BoxFit.cover,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
                 Text(
                   "Welcome $name",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 16.0, horizontal: 32.0),
                   child: Column(
                     children: [
                       TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             hintText: " Enter username", labelText: "username"),
                         validator: (value) {
                           if (value!.isEmpty) {
@@ -70,37 +70,37 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       TextFormField(
                         obscureText: true,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: " Enter Password",
                           labelText: "password",
                         ),
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return "Passeword can't be empty";
+                            return "Password can't be empty";
                           } else if (value.length < 6) {
                             return "password length should be at atleast 6";
                           }
                           return null;
                         },
                       ),
-                      SizedBox(height: 40.0),
+                      const SizedBox(height: 40.0),
                       Material(
                         color: Colors.deepPurple,
                         borderRadius:
-                            BorderRadius.circular(changeButon ? 50 : 7),
+                            BorderRadius.circular(changeButton ? 50 : 7),
                         child: InkWell(
                           onTap: () => moveToHome(context),
                           child: AnimatedContainer(
-                            duration: Duration(seconds: 1),
-                            width: changeButon ? 50 : 150,
+                            duration: const Duration(seconds: 1),
+                            width: changeButton ? 50 : 150,
                             height: 40,
                             alignment: Alignment.center,
-                            child: changeButon
-                                ? Icon(
+                            child: changeButton
+                                ? const Icon(
                                     Icons.done,
                                     color: Colors.white,
                                   )
-                                : Text("login",
+                                : const Text("login",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,

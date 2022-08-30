@@ -4,7 +4,7 @@ import 'package:mobile_app/models/shop.dart';
 class ItemWidget extends StatelessWidget {
   final Item item;
   const ItemWidget({Key? key, required this.item})
-      : assert(item != null),
+      : assert(Item != null),
         super(key: key);
 
   @override
@@ -12,7 +12,7 @@ class ItemWidget extends StatelessWidget {
     return Card(
       child: ListTile(
         onTap: () {
-          print("${item.name} pressed");
+          ("${item.name} pressed");
         },
         leading: Image.network(item.image),
         title: Text(item.name),
@@ -20,7 +20,7 @@ class ItemWidget extends StatelessWidget {
         trailing: Text(
           "\$${item.price}",
           textScaleFactor: 1.5,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.deepPurple,
             fontWeight: FontWeight.bold,
           ),
