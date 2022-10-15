@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyTheme {
+  static Color? darkBluishColor;
+
   static ThemeData get themeDta => ThemeData(
         primarySwatch: Colors.deepPurple,
         fontFamily: GoogleFonts.lato().fontFamily,
@@ -18,27 +20,8 @@ class MyTheme {
       ThemeData(brightness: Brightness.dark);
 
   static lightTheme(BuildContext context) {}
+
+//colors
+  static Color creamColor = const Color(0xfff5f5f5);
+  static Color darkbluish = const Color(0xff403b58);
 }
-
-
-
-
-
-
-// class MyTheme {
-//   static ThemeData lightTheme(BuildContext) => ThemeData(
-//       primarySwatch: Colors.deepPurple,
-//       fontFamily: GoogleFonts.lato().fontFamily,
-//       appBarTheme: AppBarTheme(
-//         color: Colors.white,
-//         elevation: 0.0,
-//         iconTheme: IconThemeData(color: Colors.black),
-//         // textTheme: theme.of(context).textTheme,
-//       ));
-// }
-
-//   static ThemeData darkTheme(BuildContext context) =>
-//       ThemeData(brightness: Brightness.dark);
-
-//   static lightTheme(BuildContext context) {}
-// }
